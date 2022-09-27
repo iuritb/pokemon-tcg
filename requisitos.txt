@@ -1,0 +1,12 @@
+vue 2 
+vue router
+vuex 
+
+ts 
+sass 
+lint 
+
+api pokemon tcg  https://pokemontcg.io/
+
+axios  
+
