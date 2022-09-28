@@ -1,6 +1,20 @@
 <template>
   <div>
-    <h1>Bem vindo ao mundo do PKM TCG</h1>
+    <v-container class="grey lighten-5" fluid>
+      <v-row no-gutters>
+        <v-col cols="6" md="3">
+          <Aside />
+        </v-col>
+
+        <v-col cols="12" sm="6" md="9">
+          <template v-for="(card, index) in pokemon">
+            <div :key="index">
+              <CardPokemon />
+            </div>
+          </template>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -11,10 +25,17 @@ import Vue from "vue";
 import apiTcg from "@/services/cards";
 import pokeApi from "@/services/pokemon";
 
+// LAYOUTS COMPONENTS
+import Aside from "@/components/layout/Aside.vue";
+import CardPokemon from "@/components/ui/CardPokemon.vue";
+
 export default Vue.extend({
   name: "View-Home",
 
-  components: {},
+  components: {
+    Aside,
+    CardPokemon,
+  },
   data() {
     return {
       allCards: {} as object,
